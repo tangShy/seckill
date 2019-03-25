@@ -15,7 +15,7 @@ import com.akon.seckill.entity.Seckill;
 @RunWith(SpringJUnit4ClassRunner.class)
 // 告诉junit spring的配置文件
 @ContextConfiguration({ "classpath:spring/spring-dao.xml" })
-public class RedisDaoTest {
+public class testSeckill {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	private long id = 1001;
