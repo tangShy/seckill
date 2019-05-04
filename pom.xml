@@ -17,7 +17,8 @@
     
     <!--补全项目依赖 -->
 	<!--1.日志 java日志有:slf4j,log4j,logback,commons-logging
-		slf4j,commons-logging:是规范/接口 日志实现:log4j,logback
+		slf4j是规范/接口 
+		日志实现:log4j,logback
 		使用:slf4j+logback -->
 	<dependency>
 		<groupId>org.slf4j</groupId>
