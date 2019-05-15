@@ -1,10 +1,7 @@
 package com.akon.seckill.dao;
 
-import static org.junit.Assert.fail;
-
 import javax.annotation.Resource;
 
-import org.apache.ibatis.annotations.Param;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -26,8 +23,8 @@ public class SuccessKilledDaoTest {
 		 * 第一次insertCount=1
 		 * 第二次insertCount=0
 		 */
-		long seckillId = 1000L;
-		long userPhone = 17707950001L;
+		long seckillId = 1002L;
+		long userPhone = 17777777777L;
 		int insertCount = successKilledDao.insertSuccessKilled(seckillId, userPhone);
 		System.out.println("insertCount="+insertCount);
 	}

@@ -21,14 +21,13 @@ import com.akon.seckill.exception.RepeatKillException;
 import com.akon.seckill.exception.SeckillCloseException;
 import com.akon.seckill.service.SeckillService;
 
-
-
 @Controller
-@RequestMapping("/seckill")
+@RequestMapping("/seckill")	//url:模块/资源/{}/细分
 public class SeckillController {
 	
 	@Autowired
 	private SeckillService seckillService;
+	
 	
 	@RequestMapping(value = "/list",method = RequestMethod.GET)
 	public String list(Model model){

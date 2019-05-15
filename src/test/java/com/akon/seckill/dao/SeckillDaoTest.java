@@ -36,7 +36,7 @@ public class SeckillDaoTest {
 	
 	@Test
 	public void testQueryAll () {
-		List<Seckill> seckills = seckillDao.queryAll(0, 100);
+		List<Seckill> seckills = seckillDao.queryAll(0, 10);
 		for (Seckill seckill : seckills) {
 			System.out.println(seckill);
 		}
@@ -47,6 +47,7 @@ public class SeckillDaoTest {
 		long seckillId = 1000L;
 		Date date = new Date();
 		int updateCount = seckillDao.reduceNumber(seckillId, date);
+		System.out.println("date==:"+date);
 		System.out.println(updateCount);
 	}
 	

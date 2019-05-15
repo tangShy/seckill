@@ -15,6 +15,28 @@ Web²ã
 	1.ÕûºÏÅäÖÃSpringMVC¿ò¼Ü
 	2.ControllerÉè¼Æ
 	3.»ùÓÚBootstrap¿ª·¢Ò³Ãæ
+
+ControllerÖÐµÄÃ¿Ò»¸ö·½·¨¶¼¶ÔÓ¦ÎÒÃÇÏµÍ³ÖÐµÄÒ»¸ö×ÊÔ´URL£¬ÆäÉè¼ÆÓ¦¸Ã×ñÑ­Restful½Ó¿ÚµÄÉè¼Æ·ç¸ñ¡£
+JavaÒì³£·Ö±àÒëÆÚÒì³£ºÍÔËÐÐÆÚÒì³££¬ÔËÐÐÆÚÒì³£²»ÐèÒªÊÖ¹¤try-catch£¬SpringµÄµÄÉùÃ÷Ê½ÊÂÎñÖ»½ÓÊÕÔËÐÐÆÚÒì³£»Ø¹ö²ßÂÔ£¬·ÇÔËÐÐÆÚÒì³£²»»á°ïÎÒÃÇ»Ø¹ö¡£
+Service²ãÖÐµÄÅ×³öÒì³£ÊÇÎªÁËÈÃSpringÄÜ¹»»Ø¹ö£¬Controller²ãÖÐ²¶»ñÒì³£ÊÇÎªÁË½«Òì³£×ª»»Îª¶ÔÓ¦µÄJson¹©Ç°Ì¨Ê¹ÓÃ£¬È±Ò»²»¿É¡£
+4. »ùÓÚBootstrap¿ª·¢Ò³Ãæ
+ÓÉÓÚÏîÄ¿µÄÇ°¶ËÒ³Ãæ¶¼ÊÇÓÉBootstrap¿ª·¢µÄ,ËùÒÔÐèÒªÏÈÈ¥ÏÂÔØBootstrap»òÕßÊÇÊ¹ÓÃÔÚÏßµÄCDN·þÎñ¡£¶øBootstrapÓÖÊÇÒÀÀµÓÚjQueryµÄ£¬ËùÒÔÐèÒªÏÈÒýÈëjQuery¡£
+
+ÓÅ»¯Ë¼Â·£º
+	°Ñ¿Í»§¶ËÂß¼­·Åµ½MySQL·þÎñ¶Ë£¬±ÜÃâÍøÂçÑÓ³ÙºÍGCÓ°Ïì
+	
+ÈçºÎ°Ñ¿Í»§¶ËÂß¼­·Åµ½MySQL·þÎñ¶Ë£¿
+ÓÐÁ½ÖÖ·½°¸£º
+	¶¨ÖÆSQL·½°¸£¬ÔÚÃ¿´Îupdateºó¶¼»á×Ô¶¯Ìá½»£¬µ«ÐèÒªÐÞ¸ÄMySQLÔ´Âë£¬³É±¾ºÜ¸ß£¬²»ÊÇ´ó¹«Ë¾£¨BATµÈ£©Ò»°ã²»»áÊ¹ÓÃÕâÖÖ·½·¨¡£
+	Ê¹ÓÃ´æ´¢¹ý³Ì£ºÕû¸öÊÂÎñÔÚMySQL¶ËÍê³É£¬ÓÃ´æ´¢¹ý³ÌÐ´ÒµÎñÂß¼­£¬·þÎñ¶Ë¸ºÔðµ÷ÓÃ¡£
+
+ÇëÇó·½·¨Ï¸½Ú´¦Àí:
+	ÇëÇó²ÎÊý°ó¶¨
+	ÇëÇó·½·¨ÏÞÖÆ
+	ÇëÇó×ª·¢ºÍÖØ¶¨Ïò
+	Êý¾ÝÄ£ÐÍ¸³Öµ
+	·µ»ØjsonÊý¾Ý
+	Cookie·ÃÎÊ
 	
 DAO²ã¹¤×÷ÑÝ±äÎª:½Ó¿ÚÉè¼Æ+SQL±àÐ´£¨²»ÐèÒªÆäËûÔÓÆßÔÓ°ËµÄ¹¦ÄÜ£©
 ´úÂëºÍSQLµÄ·ÖÀë,·½±ãreview£¨ä¯ÀÀ£©
@@ -38,7 +60,7 @@ NoSQLÊôÓÚ·Ç¹ØÏµÐÍÊý¾Ý¿â£¬½üÐ©ÄêÀ´ÔÚÊý¾Ý´æ´¢·½Ãæ³Ðµ£ÁËºÜ´óµÄÖ°Ôð£¬µ«ÊÇ¶ÔÓÚÊÂÎñµÄÖ
 ¶ÔÓÚMySQLÀ´Ëµ£¬¾ºÕù·´Ó¦µ½±³ºóµÄ¼¼ÊõÊÇ¾ÍÊÇÊÂÎñ+ÐÐ¼¶Ëø£º
 start transaction£¨¿ªÆôÊÂÎñ£©¡ú update¿â´æÊýÁ¿ ¡ú insert¹ºÂòÃ÷Ï¸ ¡ú commit£¨Ìá½»ÊÂÎñ£©
 
-ÃëÉ±µÄÄÑµã£ºÈçºÎ¸ßÐ§µÄ´¦Àí¾ºÕù£¿
+
 
 Ö®ËùÒÔÊ¹ÓÃÁªºÏÖ÷¼ü£¬ÊÇÎªÁËÄÜ¹»¹ýÂËÖØ¸´²åÈë£¬¿ÉÒÔÍ¨¹ýinsert ignore intoÓï¾äÀ´±ÜÃâÓÃ»§ÖØ¸´ÃëÉ±Í¬Ò»¼þÉÌÆ·¡£ÕâÑùµ±ÓÐÖØ¸´¼ÇÂ¼¾Í»áºöÂÔ£¬Óï¾äÖ´ÐÐºó·µ»ØÊý×Ö0¡£
 --------------------- 
@@ -57,17 +79,20 @@ start transaction£¨¿ªÆôÊÂÎñ£©¡ú update¿â´æÊýÁ¿ ¡ú insert¹ºÂòÃ÷Ï¸ ¡ú commit£¨Ìá½»
 µ«µ±²ÎÊýÔÚÁ½¸öºÍÁ½¸öÒÔÉÏÊ±£¬´«Èë·½·¨µÄ²ÎÊý¾Í»áÕÒ²»µ½¶ÔÓ¦µÄÐÎ²Î¡£ÒòÎªJavaÐÎ²ÎµÄÎÊÌâ£¬ËùÒÔÔÚ¶à¸ö»ù±¾ÀàÐÍ²ÎÊýÊ±ÐèÒªÓÃ@Param×¢½âÇø·Ö¿ªÀ´¡£
 --------------------- 
 
+ÃëÉ±µÄÄÑµã£ºÈçºÎ¸ßÐ§µÄ´¦Àí¾ºÕù£¿
+´ð£º
 
 
 ´æ´¢¹ý³ÌÓÅ»¯×Ü½á
 	1.´æ´¢¹ý³ÌÓÅ»¯:ÊÂÎñÐÐ¼¶Ëø³ÖÓÐµÄÊ±¼ä
 	2.²»Òª¹ý¶ÈÒÀÀµ´æ´¢¹ý³Ì
 	3.¼òµ¥µÄÂß¼­ÒÀÀµ´æ´¢¹ý³Ì
-	4.QPS:Ò»¸öÃëÉ±µ¥6000/qps
+	4.QPS:Ò»¸öÃëÉ±µ¥6000qps
 	
 	¾­¹ý¼òµ¥ÓÅ»¯ºÍÉî¶ÈÓÅ»¯Ö®ºó£¬±¾ÏîÄ¿´ó¸ÅÄÜ´ïµ½Ò»¸öÃëÉ±µ¥6000qps£¨Ä½¿ÎÍøÊÓÆµÖÐÕÅÀÏÊ¦ËµµÄ£©£¬Õâ¸öÊý¾Ý¶ÔÓÚÒ»¸öÃëÉ±ÉÌÆ·À´ËµÆäÊµÒÑ¾­Í¦okÁË£¬
 ×¢ÒâÕâÀïÊÇÖ¸Í¬Ò»¸öÃëÉ±ÉÌÆ·6000qps£¬Èç¹ûÊÇ²»Í¬ÉÌÆ·²»´æÔÚÐÐ¼¶Ëø¾ºÕùµÄÎÊÌâ¡£
 
 
+QPS(Query Per SecondÃ¿Ãë²éÑ¯ÂÊ)ºÍÊÂÎñÖ´ÐÐµÄÊ±¼äÓÐÃÜÇÐ¹ØÏµ£¬ÊÂÎñÖ´ÐÐÊ±¼äÔ½¶Ì£¬²¢·¢ÐÔÔ½¸ß£¬ÕâÒ²ÊÇÒª½«·ÑÊ±µÄI/O²Ù×÷ÒÆ³öÊÂÎñµÄÔ­Òò¡£
 
 

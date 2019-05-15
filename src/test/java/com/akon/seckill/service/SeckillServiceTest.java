@@ -21,7 +21,7 @@ import com.akon.seckill.exception.SeckillCloseException;
 //告诉junit spring的配置文件
 @ContextConfiguration({"classpath:spring/spring-dao.xml",
                       "classpath:spring/spring-service.xml"})
-//@Transactional  可用于测试时执行完操作之后所有事务自动回滚
+@Transactional  //可用于测试时执行完操作之后所有事务自动回滚
 public class SeckillServiceTest {
 	
 	private final Logger logger= LoggerFactory.getLogger(this.getClass());
@@ -44,7 +44,7 @@ public class SeckillServiceTest {
 
 	@Test
 	public void testExportSeckillUrl() throws Exception {
-		long seckillId = 1001;
+		long seckillId = 1002;
 		Exposer exposer = seckillService.exportSeckillUrl(seckillId);
 		logger.info("exposer={}",exposer);
 	}
@@ -68,7 +68,7 @@ public class SeckillServiceTest {
 		Exposer exposer = seckillService.exportSeckillUrl(seckillId);
 		if(exposer.isExposed()){
 			logger.info("exposer={}",exposer);
-			long userPhone = 17707950002L;
+			long userPhone = 17807950002L;
 			String md5 = exposer.getMd5();
 			
 			try{

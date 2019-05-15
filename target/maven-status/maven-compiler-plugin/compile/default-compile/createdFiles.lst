@@ -9,6 +9,7 @@ com\akon\seckill\dto\SeckillResult.class
 com\akon\seckill\service\SeckillService.class
 com\akon\seckill\dto\SeckillExecution.class
 com\akon\seckill\service\impl\SeckillServiceImpl.class
+com\akon\seckill\dao\cache\RedisDao.class
 com\akon\seckill\enums\SeckillStatEnum.class
 com\akon\seckill\exception\SeckillException.class
 com\akon\seckill\exception\RepeatKillException.class

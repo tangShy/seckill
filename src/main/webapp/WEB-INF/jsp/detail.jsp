@@ -71,6 +71,7 @@
 <script src="/seckill/resources/script/seckill.js"></script>
 
 <script type="text/javascript">
+	console.log("***");
     jQuery(function() {
         //使用EL表达式传入参数
         seckill.detail.init({
