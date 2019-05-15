@@ -51,8 +51,3 @@ SET @r_result = -3;
 CALL execute_seckill(1003, 13502178891, now(), @r_result);
 -- 获取结果
 SELECT @r_result;
---------------------- 
-作者：雨临Lewis 
-来源：CSDN 
-原文：https://blog.csdn.net/lewky_liu/article/details/78166080 
-版权声明：本文为博主原创文章，转载请附上博文链接！
