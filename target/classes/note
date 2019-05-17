@@ -29,6 +29,11 @@ Service²ãÖÐµÄÅ×³öÒì³£ÊÇÎªÁËÈÃSpringÄÜ¹»»Ø¹ö£¬Controller²ãÖÐ²¶»ñÒì³£ÊÇÎªÁË½«Òì³£×
 ÓÐÁ½ÖÖ·½°¸£º
 	¶¨ÖÆSQL·½°¸£¬ÔÚÃ¿´Îupdateºó¶¼»á×Ô¶¯Ìá½»£¬µ«ÐèÒªÐÞ¸ÄMySQLÔ´Âë£¬³É±¾ºÜ¸ß£¬²»ÊÇ´ó¹«Ë¾£¨BATµÈ£©Ò»°ã²»»áÊ¹ÓÃÕâÖÖ·½·¨¡£
 	Ê¹ÓÃ´æ´¢¹ý³Ì£ºÕû¸öÊÂÎñÔÚMySQL¶ËÍê³É£¬ÓÃ´æ´¢¹ý³ÌÐ´ÒµÎñÂß¼­£¬·þÎñ¶Ë¸ºÔðµ÷ÓÃ¡£
+	
+	ÎªÊ²Ã´Ê¹ÓÃredis£¿
+	RedisÊôÓÚNoSQL£¬¼´·Ç¹ØÏµÐÍÊý¾Ý¿â£¬ËüÊÇkey-valueÐÍÊý¾Ý¿â£¬ÊÇÖ±½ÓÔÚÄÚ´æÖÐ½øÐÐ´æÈ¡Êý¾ÝµÄ£¬ËùÒÔÓÐ×ÅºÜ¸ßµÄÐÔÄÜ¡£
+	ÀûÓÃRedis¿ÉÒÔ¼õÇáMySQL·þÎñÆ÷µÄÑ¹Á¦£¬¼õÉÙÁË¸úÊý¾Ý¿â·þÎñÆ÷µÄÍ¨ÐÅ´ÎÊý¡£ÃëÉ±µÄÆ¿¾±¾ÍÔÚÓÚ¸úÊý¾Ý¿â·þÎñÆ÷µÄÍ¨ÐÅËÙ¶È£¨MySQL±¾ÉíµÄÖ÷¼ü²éÑ¯·Ç³£¿ì£©
+	------------------------------------------------------------------------------------
 
 ÇëÇó·½·¨Ï¸½Ú´¦Àí:
 	ÇëÇó²ÎÊý°ó¶¨
