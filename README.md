@@ -1,7 +1,7 @@
 # SSM实战项目——Java高并发秒杀API
 ## 项目介绍
->这是一个基于ssm框架的高并发秒杀系统
->项目来源
+>这是一个基于ssm框架的高并发秒杀系统<br>
+项目来源
 这是慕课网上的一个免费项目教学视频，名为Java高并发秒杀API，一共有如下四节课程，附带视频传送门（在视频中老师是用IDEA，本文用的是Eclipse）
 * [Java高并发秒杀API之业务分析与DAO层](http://www.imooc.com/learn/587)
 * [Java高并发秒杀API之Service层](http://www.imooc.com/learn/631)
@@ -47,4 +47,9 @@
 * 高并发点和高并发分析
 * 优化思路并实现
 
-
+## 项目总结
+>本文根据慕课网的视频教学进行了相应的学习总结，全文较长，分为四节，附带CSDN传送门，CSDN传送门
+* [**Java高并发秒杀API(一)之业务分析与DAO层**](http://blog.csdn.net/lewky_liu/article/details/78159983)
+* [**Java高并发秒杀API(二)之Service层**](http://blog.csdn.net/lewky_liu/article/details/78162149)
+* [**Java高并发秒杀API(三)之Web层**](http://blog.csdn.net/lewky_liu/article/details/78162153)
+* [**Java高并发秒杀API(四)之高并发优化**](http://blog.csdn.net/lewky_liu/article/details/78166080)
