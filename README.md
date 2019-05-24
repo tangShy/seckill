@@ -1,50 +1,50 @@
-# SSMÊµÕ½ÏîÄ¿¡ª¡ªJava¸ß²¢·¢ÃëÉ±API
-## ÏîÄ¿½éÉÜ
->ÕâÊÇÒ»¸ö»ùÓÚssm¿ò¼ÜµÄ¸ß²¢·¢ÃëÉ±ÏµÍ³
->ÏîÄ¿À´Ô´
-ÕâÊÇÄ½¿ÎÍøÉÏµÄÒ»¸öÃâ·ÑÏîÄ¿½ÌÑ§ÊÓÆµ£¬ÃûÎªJava¸ß²¢·¢ÃëÉ±API£¬Ò»¹²ÓÐÈçÏÂËÄ½Ú¿Î³Ì£¬¸½´øÊÓÆµ´«ËÍÃÅ£¨ÔÚÊÓÆµÖÐÀÏÊ¦ÊÇÓÃIDEA£¬±¾ÎÄÓÃµÄÊÇEclipse£©
-* [Java¸ß²¢·¢ÃëÉ±APIÖ®ÒµÎñ·ÖÎöÓëDAO²ã](http://www.imooc.com/learn/587)
-* [Java¸ß²¢·¢ÃëÉ±APIÖ®Service²ã](http://www.imooc.com/learn/631)
-* [Java¸ß²¢·¢ÃëÉ±APIÖ®Web²ã](http://www.imooc.com/learn/630)
-* [Java¸ß²¢·¢ÃëÉ±APIÖ®¸ß²¢·¢ÓÅ»¯](http://www.imooc.com/learn/632)
+# SSMå®žæˆ˜é¡¹ç›®â€”â€”Javaé«˜å¹¶å‘ç§’æ€API
+## é¡¹ç›®ä»‹ç»
+>è¿™æ˜¯ä¸€ä¸ªåŸºäºŽssmæ¡†æž¶çš„é«˜å¹¶å‘ç§’æ€ç³»ç»Ÿ<br>
+é¡¹ç›®æ¥æº:
+è¿™æ˜¯æ…•è¯¾ç½‘ä¸Šçš„ä¸€ä¸ªå…è´¹é¡¹ç›®æ•™å­¦è§†é¢‘ï¼Œåä¸ºJavaé«˜å¹¶å‘ç§’æ€APIï¼Œä¸€å…±æœ‰å¦‚ä¸‹å››èŠ‚è¯¾ç¨‹ï¼Œé™„å¸¦è§†é¢‘ä¼ é€é—¨ï¼ˆåœ¨è§†é¢‘ä¸­è€å¸ˆæ˜¯ç”¨IDEAï¼Œæœ¬æ–‡ç”¨çš„æ˜¯Eclipseï¼‰
+* [Javaé«˜å¹¶å‘ç§’æ€APIä¹‹ä¸šåŠ¡åˆ†æžä¸ŽDAOå±‚](http://www.imooc.com/learn/587)
+* [Javaé«˜å¹¶å‘ç§’æ€APIä¹‹Serviceå±‚](http://www.imooc.com/learn/631)
+* [Javaé«˜å¹¶å‘ç§’æ€APIä¹‹Webå±‚](http://www.imooc.com/learn/630)
+* [Javaé«˜å¹¶å‘ç§’æ€APIä¹‹é«˜å¹¶å‘ä¼˜åŒ–](http://www.imooc.com/learn/632)
 
-## ¿ª·¢»·¾³ºÍËùÓÃ¼¼Êõ
-¿ª·¢»·¾³£ºWindows10 + Eclipse + MySQL5.7 + Tomcat7.0 + Maven<br>
-Ê¹ÓÃ¼¼Êõ£ºspring + springMVC + mybatis
+## å¼€å‘çŽ¯å¢ƒå’Œæ‰€ç”¨æŠ€æœ¯
+å¼€å‘çŽ¯å¢ƒï¼šWindows10 + Eclipse + MySQL5.7 + Tomcat7.0 + Maven<br>
+ä½¿ç”¨æŠ€æœ¯ï¼šspring + springMVC + mybatis
 
-## Ïà¹Ø¼¼Êõ½éÉÜ
+## ç›¸å…³æŠ€æœ¯ä»‹ç»
 >MySQL
 
-* ±íÉè¼Æ
-* SQL¼¼ÇÉ
-* ÊÂÎñºÍÐÐ¼¶Ëø
+* è¡¨è®¾è®¡
+* SQLæŠ€å·§
+* äº‹åŠ¡å’Œè¡Œçº§é”
 
 >MyBatis
 
-* DAO²ãÉè¼ÆÓë¿ª·¢
-* MyBatisºÏÀíÊ¹ÓÃ
-* ÓëSpringÕûºÏ
+* DAOå±‚è®¾è®¡ä¸Žå¼€å‘
+* MyBatisåˆç†ä½¿ç”¨
+* ä¸ŽSpringæ•´åˆ
 
 >Spring
 
-* Spring IOCÕûºÏService
-* ÉùÃ÷Ê½ÊÂÎñÔËÓÃ
+* Spring IOCæ•´åˆService
+* å£°æ˜Žå¼äº‹åŠ¡è¿ç”¨
 
 >SpringMVC
 
-* Restful½è¿ÚÉè¼ÆºÍÊ¹ÓÃ
-* ¿ò¼ÜÔË×÷Á÷³Ì
-* Controller¿ª·¢¼¼ÇÉ
+* Restfulå€Ÿå£è®¾è®¡å’Œä½¿ç”¨
+* æ¡†æž¶è¿ä½œæµç¨‹
+* Controllerå¼€å‘æŠ€å·§
 
->Ç°¶Ë
+>å‰ç«¯
 
-* ½»»¥Éè¼Æ
+* äº¤äº’è®¾è®¡
 * Bootstrap
 * jQuery
 
->¸ß²¢·¢
+>é«˜å¹¶å‘
 
-* ¸ß²¢·¢µãºÍ¸ß²¢·¢·ÖÎö
-* ÓÅ»¯Ë¼Â·²¢ÊµÏÖ
+* é«˜å¹¶å‘ç‚¹å’Œé«˜å¹¶å‘åˆ†æž
+* ä¼˜åŒ–æ€è·¯å¹¶å®žçŽ°
 
 
