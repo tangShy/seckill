@@ -1,55 +1,57 @@
-# SSMÊµÕ½ÏîÄ¿¡ª¡ªJava¸ß²¢·¢ÃëÉ±API
-## ÏîÄ¿½éÉÜ
->ÕâÊÇÒ»¸ö»ùÓÚssm¿ò¼ÜµÄ¸ß²¢·¢ÃëÉ±ÏµÍ³<br>
-ÏîÄ¿À´Ô´
-ÕâÊÇÄ½¿ÎÍøÉÏµÄÒ»¸öÃâ·ÑÏîÄ¿½ÌÑ§ÊÓÆµ£¬ÃûÎªJava¸ß²¢·¢ÃëÉ±API£¬Ò»¹²ÓĞÈçÏÂËÄ½Ú¿Î³Ì£¬¸½´øÊÓÆµ´«ËÍÃÅ£¨ÔÚÊÓÆµÖĞÀÏÊ¦ÊÇÓÃIDEA£¬±¾ÎÄÓÃµÄÊÇEclipse£©
-* [Java¸ß²¢·¢ÃëÉ±APIÖ®ÒµÎñ·ÖÎöÓëDAO²ã](http://www.imooc.com/learn/587)
-* [Java¸ß²¢·¢ÃëÉ±APIÖ®Service²ã](http://www.imooc.com/learn/631)
-* [Java¸ß²¢·¢ÃëÉ±APIÖ®Web²ã](http://www.imooc.com/learn/630)
-* [Java¸ß²¢·¢ÃëÉ±APIÖ®¸ß²¢·¢ÓÅ»¯](http://www.imooc.com/learn/632)
+# SSMå®æˆ˜é¡¹ç›®â€”â€”Javaé«˜å¹¶å‘ç§’æ€API
+## é¡¹ç›®ä»‹ç»
+>è¿™æ˜¯ä¸€ä¸ªåŸºäºssmæ¡†æ¶çš„é«˜å¹¶å‘ç§’æ€ç³»ç»Ÿ<br>
+é¡¹ç›®æ¥æº
+è¿™æ˜¯æ…•è¯¾ç½‘ä¸Šçš„ä¸€ä¸ªå…è´¹é¡¹ç›®æ•™å­¦è§†é¢‘ï¼Œåä¸ºJavaé«˜å¹¶å‘ç§’æ€APIï¼Œä¸€å…±æœ‰å¦‚ä¸‹å››èŠ‚è¯¾ç¨‹ï¼Œé™„å¸¦è§†é¢‘ä¼ é€é—¨ï¼ˆåœ¨è§†é¢‘ä¸­è€å¸ˆæ˜¯ç”¨IDEAï¼Œæœ¬æ–‡ç”¨çš„æ˜¯Eclipseï¼‰
+* [Javaé«˜å¹¶å‘ç§’æ€APIä¹‹ä¸šåŠ¡åˆ†æä¸DAOå±‚](http://www.imooc.com/learn/587)
+* [Javaé«˜å¹¶å‘ç§’æ€APIä¹‹Serviceå±‚](http://www.imooc.com/learn/631)
+* [Javaé«˜å¹¶å‘ç§’æ€APIä¹‹Webå±‚](http://www.imooc.com/learn/630)
+* [Javaé«˜å¹¶å‘ç§’æ€APIä¹‹é«˜å¹¶å‘ä¼˜åŒ–](http://www.imooc.com/learn/632)
 
-## ¿ª·¢»·¾³ºÍËùÓÃ¼¼Êõ
-¿ª·¢»·¾³£ºWindows10 + Eclipse + MySQL5.7 + Tomcat7.0 + Maven<br>
-Ê¹ÓÃ¼¼Êõ£ºspring + springMVC + mybatis
+## å¼€å‘ç¯å¢ƒå’Œæ‰€ç”¨æŠ€æœ¯
+>å¼€å‘ç¯å¢ƒ
+* Windows10 + Eclipse + MySQL5.7 + Tomcat7.0 + Maven<br>
+>ä½¿ç”¨æŠ€æœ¯
+* spring + springMVC + mybatis
 
-## Ïà¹Ø¼¼Êõ½éÉÜ
+## ç›¸å…³æŠ€æœ¯ä»‹ç»
 >MySQL
 
-* ±íÉè¼Æ
-* SQL¼¼ÇÉ
-* ÊÂÎñºÍĞĞ¼¶Ëø
+* è¡¨è®¾è®¡
+* SQLæŠ€å·§
+* äº‹åŠ¡å’Œè¡Œçº§é”
 
 >MyBatis
 
-* DAO²ãÉè¼ÆÓë¿ª·¢
-* MyBatisºÏÀíÊ¹ÓÃ
-* ÓëSpringÕûºÏ
+* DAOå±‚è®¾è®¡ä¸å¼€å‘
+* MyBatisåˆç†ä½¿ç”¨
+* ä¸Springæ•´åˆ
 
 >Spring
 
-* Spring IOCÕûºÏService
-* ÉùÃ÷Ê½ÊÂÎñÔËÓÃ
+* Spring IOCæ•´åˆService
+* å£°æ˜å¼äº‹åŠ¡è¿ç”¨
 
 >SpringMVC
 
-* Restful½è¿ÚÉè¼ÆºÍÊ¹ÓÃ
-* ¿ò¼ÜÔË×÷Á÷³Ì
-* Controller¿ª·¢¼¼ÇÉ
+* Restfulå€Ÿå£è®¾è®¡å’Œä½¿ç”¨
+* æ¡†æ¶è¿ä½œæµç¨‹
+* Controllerå¼€å‘æŠ€å·§
 
->Ç°¶Ë
+>å‰ç«¯
 
-* ½»»¥Éè¼Æ
+* äº¤äº’è®¾è®¡
 * Bootstrap
 * jQuery
 
->¸ß²¢·¢
+>é«˜å¹¶å‘
 
-* ¸ß²¢·¢µãºÍ¸ß²¢·¢·ÖÎö
-* ÓÅ»¯Ë¼Â·²¢ÊµÏÖ
+* é«˜å¹¶å‘ç‚¹å’Œé«˜å¹¶å‘åˆ†æ
+* ä¼˜åŒ–æ€è·¯å¹¶å®ç°
 
-## ÏîÄ¿×Ü½á
->±¾ÎÄ¸ù¾İÄ½¿ÎÍøµÄÊÓÆµ½ÌÑ§½øĞĞÁËÏàÓ¦µÄÑ§Ï°×Ü½á£¬È«ÎÄ½Ï³¤£¬·ÖÎªËÄ½Ú£¬¸½´øCSDN´«ËÍÃÅ£¬CSDN´«ËÍÃÅ
-* [**Java¸ß²¢·¢ÃëÉ±API(Ò»)Ö®ÒµÎñ·ÖÎöÓëDAO²ã**](http://blog.csdn.net/lewky_liu/article/details/78159983)
-* [**Java¸ß²¢·¢ÃëÉ±API(¶ş)Ö®Service²ã**](http://blog.csdn.net/lewky_liu/article/details/78162149)
-* [**Java¸ß²¢·¢ÃëÉ±API(Èı)Ö®Web²ã**](http://blog.csdn.net/lewky_liu/article/details/78162153)
-* [**Java¸ß²¢·¢ÃëÉ±API(ËÄ)Ö®¸ß²¢·¢ÓÅ»¯**](http://blog.csdn.net/lewky_liu/article/details/78166080)
+## é¡¹ç›®æ€»ç»“
+>æœ¬æ–‡æ ¹æ®æ…•è¯¾ç½‘çš„è§†é¢‘æ•™å­¦è¿›è¡Œäº†ç›¸åº”çš„å­¦ä¹ æ€»ç»“ï¼Œå…¨æ–‡è¾ƒé•¿ï¼Œåˆ†ä¸ºå››èŠ‚ï¼Œé™„å¸¦CSDNä¼ é€é—¨ï¼ŒCSDNä¼ é€é—¨
+* [**Javaé«˜å¹¶å‘ç§’æ€API(ä¸€)ä¹‹ä¸šåŠ¡åˆ†æä¸DAOå±‚**](http://blog.csdn.net/lewky_liu/article/details/78159983)
+* [**Javaé«˜å¹¶å‘ç§’æ€API(äºŒ)ä¹‹Serviceå±‚**](http://blog.csdn.net/lewky_liu/article/details/78162149)
+* [**Javaé«˜å¹¶å‘ç§’æ€API(ä¸‰)ä¹‹Webå±‚**](http://blog.csdn.net/lewky_liu/article/details/78162153)
+* [**Javaé«˜å¹¶å‘ç§’æ€API(å››)ä¹‹é«˜å¹¶å‘ä¼˜åŒ–**](http://blog.csdn.net/lewky_liu/article/details/78166080)
