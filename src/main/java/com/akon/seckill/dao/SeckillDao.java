@@ -1,11 +1,11 @@
 package com.akon.seckill.dao;
 
-import java.util.Date;
-import java.util.List;
-
+import com.akon.seckill.entity.Seckill;
 import org.apache.ibatis.annotations.Param;
 
-import com.akon.seckill.entity.Seckill;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 public interface SeckillDao {
 	
@@ -41,4 +41,10 @@ public interface SeckillDao {
 	 * @return
 	 */
 	List<Seckill> queryAll(@Param("offset")int offset,@Param("limit")int limit);
+	
+	/**
+	 * 使用存储过程执行秒杀
+	 * @param paramMap
+	 */
+	void killByProcedure(Map<String,Object> paramMap);
 }

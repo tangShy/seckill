@@ -1,103 +1,103 @@
-# �������裺
-DAO��
-	1.�����ݿ�
-	2.�������ݿ��Ӧ��ʵ����
-	3.����ʵ�����Ӧ��DAO��ӿڣ�Ҳ����Mapper�ӿڣ�DAO��Ե��Ǿ���ʵ���������ġ�ʵ�����ɾ�Ĳ顱��
-	4.���� mybatis ʵ��DAO�ӿ�
-	5.����Spring��MyBatis
-	6.DAO�㵥Ԫ����
-Service��
-	1.����SeckillService�ӿ�
-	2.Service��ӿڵ�ʵ��
-	3.ʹ��Spring����Service�������
-	4.����Service��ļ��ɲ���
-Web��
-	1.��������SpringMVC���
-	2.Controller���
-	3.����Bootstrap����ҳ��
+# 操作步骤：
+DAO层
+	1.建数据库
+	2.创建数据库对应的实体类
+	3.创建实体类对应的DAO层接口（也就是Mapper接口，DAO针对的是具体实体来操作的“实体的增删改查”）
+	4.基于 mybatis 实现DAO接口
+	5.整合Spring和MyBatis
+	6.DAO层单元测试
+Service层
+	1.定义SeckillService接口
+	2.Service层接口的实现
+	3.使用Spring进行Service层的配置
+	4.进行Service层的集成测试
+Web层
+	1.整合配置SpringMVC框架
+	2.Controller设计
+	3.基于Bootstrap开发页面
 
-Controller�е�ÿһ����������Ӧ����ϵͳ�е�һ����ԴURL�������Ӧ����ѭRestful�ӿڵ���Ʒ��
-Java�쳣�ֱ������쳣���������쳣���������쳣����Ҫ�ֹ�try-catch��Spring�ĵ�����ʽ����ֻ�����������쳣�ع����ԣ����������쳣��������ǻع���
-Service���е��׳��쳣��Ϊ����Spring�ܹ��ع���Controller���в����쳣��Ϊ�˽��쳣ת��Ϊ��Ӧ��Json��ǰ̨ʹ�ã�ȱһ���ɡ�
-4. ����Bootstrap����ҳ��
-������Ŀ��ǰ��ҳ�涼����Bootstrap������,������Ҫ��ȥ����Bootstrap������ʹ�����ߵ�CDN���񡣶�Bootstrap����������jQuery�ģ�������Ҫ������jQuery��
+Controller中的每一个方法都对应我们系统中的一个资源URL，其设计应该遵循Restful接口的设计风格。
+Java异常分编译期异常和运行期异常，运行期异常不需要手工try-catch，Spring的的声明式事务只接收运行期异常回滚策略，非运行期异常不会帮我们回滚。
+Service层中的抛出异常是为了让Spring能够回滚，Controller层中捕获异常是为了将异常转换为对应的Json供前台使用，缺一不可。
+4. 基于Bootstrap开发页面
+由于项目的前端页面都是由Bootstrap开发的,所以需要先去下载Bootstrap或者是使用在线的CDN服务。而Bootstrap又是依赖于jQuery的，所以需要先引入jQuery。
 
-�Ż�˼·��
-	�ѿͻ����߼��ŵ�MySQL����ˣ����������ӳٺ�GCӰ��
+优化思路：
+	把客户端逻辑放到MySQL服务端，避免网络延迟和GC影响
 	
-��ΰѿͻ����߼��ŵ�MySQL����ˣ�
-�����ַ�����
-	����SQL��������ÿ��update�󶼻��Զ��ύ������Ҫ�޸�MySQLԴ�룬�ɱ��ܸߣ����Ǵ�˾��BAT�ȣ�һ�㲻��ʹ�����ַ�����
-	ʹ�ô洢���̣�����������MySQL����ɣ��ô洢����дҵ���߼�������˸�����á�
+如何把客户端逻辑放到MySQL服务端？
+有两种方案：
+	定制SQL方案，在每次update后都会自动提交，但需要修改MySQL源码，成本很高，不是大公司（BAT等）一般不会使用这种方法。
+	使用存储过程：整个事务在MySQL端完成，用存储过程写业务逻辑，服务端负责调用。
 	
-	Ϊʲôʹ��redis��
-	Redis����NoSQL�����ǹ�ϵ�����ݿ⣬����key-value�����ݿ⣬��ֱ�����ڴ��н��д�ȡ���ݵģ��������źܸߵ����ܡ�
-	����Redis���Լ���MySQL��������ѹ���������˸����ݿ��������ͨ�Ŵ�������ɱ��ƿ�������ڸ����ݿ��������ͨ���ٶȣ�MySQL������������ѯ�ǳ��죩
+	为什么使用redis？
+	Redis属于NoSQL，即非关系型数据库，它是key-value型数据库，是直接在内存中进行存取数据的，所以有着很高的性能。
+	利用Redis可以减轻MySQL服务器的压力，减少了跟数据库服务器的通信次数。秒杀的瓶颈就在于跟数据库服务器的通信速度（MySQL本身的主键查询非常快）
 	------------------------------------------------------------------------------------
 
-���󷽷�ϸ�ڴ���:
-	���������
-	���󷽷�����
-	����ת�����ض���
-	����ģ�͸�ֵ
-	����json����
-	Cookie����
+请求方法细节处理:
+	请求参数绑定
+	请求方法限制
+	请求转发和重定向
+	数据模型赋值
+	返回json数据
+	Cookie访问
 	
-DAO�㹤���ݱ�Ϊ:�ӿ����+SQL��д������Ҫ���������Ӱ˵Ĺ��ܣ�
-�����SQL�ķ���,����review�������
-DAOƴ�ӵ��߼���Service����ɣ�DAOֻ�踺��SQL��䣬��������Service����ɣ�
+DAO层工作演变为:接口设计+SQL编写（不需要其他杂七杂八的功能）
+代码和SQL的分离,方便review（浏览）
+DAO拼接等逻辑在Service层完成（DAO只需负责SQL语句，其他都由Service层完成）
 
-## ��ɱҵ��ĺ����ǶԿ��Ĵ���
-���û�ִ����ɱ�ɹ�ʱ��Ӧ�÷�����������������
-	1.�����
-	2.��¼������ϸ
-	��������������һ����������ͨ��������ʵ���������
+## 秒杀业务的核心是对库存的处理
+当用户执行秒杀成功时，应该发生以下两个操作：
+	1.减库存
+	2.记录购买明细
+	这两个操作属于一个完整事务，通过事务来实现数据落地
 
-## ��MySQL��NoSQL����������صķ���
-MySQL���ڹ�ϵ�����ݿ⣬��MySQL���õ��������������׼ȷ�İ�������ɼ����ͼ�¼������ϸ�Ĺ��̡�MySQL�ж��ִ洢���棬��ֻ��InnoDB�洢����֧������
-InnoDB֧���м����ͱ�������Ĭ��ʹ���м���
-NoSQL���ڷǹ�ϵ�����ݿ⣬��Щ���������ݴ洢����е��˺ܴ��ְ�𣬵��Ƕ��������֧�����Ĳ����Ǻܺã�����׷��������ܡ��߸��á��ֲ�ʽ��
-���������Ȼ��Ŀǰ��ɿ���������ط�����
+## 有MySQL与NoSQL两种数据落地的方案
+MySQL属于关系型数据库，而MySQL内置的事务机制来可以准确的帮我们完成减库存和记录购买明细的过程。MySQL有多种存储引擎，但只有InnoDB存储引擎支持事务。
+InnoDB支持行级锁和表级锁，默认使用行级锁
+NoSQL属于非关系型数据库，近些年来在数据存储方面承担了很大的职责，但是对于事务的支持做的并不是很好，更多追求的是性能、高复用、分布式。
+事务机制依然是目前最可靠的数据落地方案。
 --------------------- 
-��һ���û���ִ����ɱĳ����Ʒʱ������Ҳ��Ҫ��ɱ����Ʒ���û���ֻ�ܵȴ���ֱ����һ���û��ύ��ع������������ܹ��õ�����Ʒ����ִ����ɱ������
-������漰�������ľ�����
+当一个用户在执行秒杀某件商品时，其他也想要秒杀该商品的用户就只能等待，直到上一个用户提交或回滚了事务，他才能够得到该商品的锁执行秒杀操作。
+这里就涉及到了锁的竞争。
 
-����MySQL��˵��������Ӧ������ļ����Ǿ�������+�м�����
-start transaction���������񣩡� update������� �� insert������ϸ �� commit���ύ����
+对于MySQL来说，竞争反应到背后的技术是就是事务+行级锁：
+start transaction（开启事务）→ update库存数量 → insert购买明细 → commit（提交事务）
 
 
 
-֮����ʹ��������������Ϊ���ܹ������ظ����룬����ͨ��insert ignore into����������û��ظ���ɱͬһ����Ʒ�����������ظ���¼�ͻ���ԣ����ִ�к󷵻�����0��
---------------------- 
-
-## ���ܴ��ڵ�����
-  ��װ��Ƶ��Ľ������̣����ܻ���ֽ���ʧ�ܵ������ԭ���ǵ����һ��timestamp����Ϊon update current_timestamp��ʱ��������timestamp�ֶ���Ҫ��ʽ
-  �趨defaultֵ��
-���������������timestamp�ֶΣ�����ֻ�ѵ�һ���趨Ϊcurrent_timestamp���ڶ���û���趨Ĭ��ֵ��MySQLҲ�ܳɹ�����,���Ƿ������Ͳ��С�����mysql5.5�汾
-��timestamp�Ĵ�����
-Ϊ�˽��������⣬��create_time�ŵ�start_time��end_time��ǰ�棬���е�mysql�汾��Ҫ������ʱ���������Ĭ��ֵ��
+之所以使用联合主键，是为了能够过滤重复插入，可以通过insert ignore into语句来避免用户重复秒杀同一件商品。这样当有重复记录就会忽略，语句执行后返回数字0。
 --------------------- 
 
-Ϊʲô�еķ����β�ǰ��@Param���е�ȴû�У�
-  ������Ĵ�����Է��֣����������β�����������������ʱ����Ҫ�ڲ���ǰ����@Param����������ϸ�ע�����֮��Ĳ�������ʱ������
-����Sun�ṩ��Ĭ�ϱ�������javac���ڱ�����Class�ļ��лᶪʧ������ʵ�����ƣ������е��βλ����������arg0��arg1�ȣ���ֻ��һ������ʱ������ν��
-������������������������ʱ�����뷽���Ĳ����ͻ��Ҳ�����Ӧ���βΡ���ΪJava�βε����⣬�����ڶ���������Ͳ���ʱ��Ҫ��@Paramע�����ֿ�����
+## 可能存在的问题
+  安装视频里的建表过程，可能会出现建表失败的情况。原因是当你给一个timestamp设置为on update current_timestamp的时候，其他的timestamp字段需要显式
+  设定default值。
+但是如果你有两个timestamp字段，但是只把第一个设定为current_timestamp而第二个没有设定默认值，MySQL也能成功建表,但是反过来就不行。这是mysql5.5版本
+对timestamp的处理。
+为了解决这个问题，将create_time放到start_time和end_time的前面，还有的mysql版本需要将三个时间戳都设置默认值。
 --------------------- 
 
-��ɱ���ѵ㣺��θ�Ч�Ĵ���������
-��
+为什么有的方法形参前有@Param，有的却没有？
+  从上面的代码可以发现，当方法的形参在两个及两个以上时，需要在参数前加上@Param，如果不加上该注解会在之后的测试运行时报错。
+这是Sun提供的默认编译器（javac）在编译后的Class文件中会丢失参数的实际名称，方法中的形参会变成无意义的arg0、arg1等，在只有一个参数时就无所谓，
+但当参数在两个和两个以上时，传入方法的参数就会找不到对应的形参。因为Java形参的问题，所以在多个基本类型参数时需要用@Param注解区分开来。
+--------------------- 
+
+秒杀的难点：如何高效的处理竞争？
+答：
 
 
-�洢�����Ż��ܽ�
-	1.�洢�����Ż�:�����м������е�ʱ��
-	2.��Ҫ���������洢����
-	3.�򵥵��߼������洢����
-	4.QPS:һ����ɱ��6000qps
+存储过程优化总结
+	1.存储过程优化:事务行级锁持有的时间
+	2.不要过度依赖存储过程
+	3.简单的逻辑依赖存储过程
+	4.QPS:一个秒杀单6000qps
 	
-	�������Ż�������Ż�֮�󣬱���Ŀ����ܴﵽһ����ɱ��6000qps��Ľ������Ƶ������ʦ˵�ģ���������ݶ���һ����ɱ��Ʒ��˵��ʵ�Ѿ�ͦok�ˣ�
-ע��������ָͬһ����ɱ��Ʒ6000qps������ǲ�ͬ��Ʒ�������м������������⡣
+	经过简单优化和深度优化之后，本项目大概能达到一个秒杀单6000qps（慕课网视频中张老师说的），这个数据对于一个秒杀商品来说其实已经挺ok了，
+注意这里是指同一个秒杀商品6000qps，如果是不同商品不存在行级锁竞争的问题。
 
 
-QPS(Query Per Secondÿ���ѯ��)������ִ�е�ʱ�������й�ϵ������ִ��ʱ��Խ�̣�������Խ�ߣ���Ҳ��Ҫ����ʱ��I/O�����Ƴ������ԭ��
+QPS(Query Per Second每秒查询率)和事务执行的时间有密切关系，事务执行时间越短，并发性越高，这也是要将费时的I/O操作移出事务的原因。
 
 

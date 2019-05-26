@@ -1,17 +1,5 @@
 package com.akon.seckill.web;
 
-import java.util.Date;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.akon.seckill.dto.Exposer;
 import com.akon.seckill.dto.SeckillExecution;
 import com.akon.seckill.dto.SeckillResult;
@@ -20,9 +8,16 @@ import com.akon.seckill.enums.SeckillStatEnum;
 import com.akon.seckill.exception.RepeatKillException;
 import com.akon.seckill.exception.SeckillCloseException;
 import com.akon.seckill.service.SeckillService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
+import java.util.List;
 
 @Controller
-@RequestMapping("/seckill")	//url:模块/资源/{}/细分
+@RequestMapping("/seckill")	//url:???/???/{}/???
 public class SeckillController {
 	
 	@Autowired
@@ -32,11 +27,11 @@ public class SeckillController {
 	@RequestMapping(value = "/list",method = RequestMethod.GET)
 	public String list(Model model){
 		//list.jsp+mode=ModelAndView
-		//获取列表页
+		//????б??
 		List<Seckill> list = seckillService.getSeckillList();
 		model.addAttribute("list",list);
 		System.out.println("list==="+list);
-		return "list";	//		等价于/WEB_INF/jsp/"list".jsp
+		return "list";	//		?????/WEB_INF/jsp/"list".jsp
 	}
 	
 	@RequestMapping(value="/{seckillId}/detail",method = RequestMethod.GET)
@@ -47,7 +42,7 @@ public class SeckillController {
 		
 		Seckill seckill = seckillService.getById(seckillId);
 		if(seckill == null){
-			return "foeward:/seckill/list";
+			return "forward:/seckill/list";
 		}
 		
 		model.addAttribute("seckill", seckill);
@@ -55,7 +50,7 @@ public class SeckillController {
 		return "detail";
 	}
 	
-	//ajax,json暴露秒杀接口的方法
+	//ajax,json?????????????
 	@RequestMapping(value = "/{seckillId}/exposer",
 					method = RequestMethod.GET,
 					produces = {"application/json;chaeset=utf-8"})
@@ -82,11 +77,13 @@ public class SeckillController {
 												@PathVariable("md5")String md5,
 												@CookieValue(value= "userPhone",required=false)Long userPhone){
 		if(userPhone == null){
-			return new SeckillResult<SeckillExecution>(false,"未注册");
+			return new SeckillResult<SeckillExecution>(false,"δ???");
 		}
 		
 		try{
-			SeckillExecution execution = seckillService.executeSeckill(seckillId, userPhone, md5);
+//			SeckillExecution execution = seckillService.executeSeckill(seckillId, userPhone, md5);
+			//????????????洢????
+			SeckillExecution execution = seckillService.executeSeckillProcedure(seckillId, userPhone, md5);
 			return new SeckillResult<SeckillExecution>(true,execution);
 		}catch(RepeatKillException e1){
 			SeckillExecution execution = new SeckillExecution(seckillId,SeckillStatEnum.REPEAT_KILL);
@@ -101,7 +98,7 @@ public class SeckillController {
 
 	}
 	
-	//获取系统时间
+	//????????
 	@RequestMapping(value = "/time/now",method = RequestMethod.GET)
 	@ResponseBody
 	public SeckillResult<Long> time(){

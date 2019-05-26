@@ -68,7 +68,7 @@
 <%--jQuery countDown倒计时插件--%>
 <script src="https://cdn.bootcss.com/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
 
-<script src="/seckill/resources/script/seckill.js"></script>
+<script src="/resources/script/seckill.js"></script>
 
 <script type="text/javascript">
 	console.log("***");

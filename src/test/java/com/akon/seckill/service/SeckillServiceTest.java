@@ -1,7 +1,10 @@
 package com.akon.seckill.service;
 
-import java.util.List;
-
+import com.akon.seckill.dto.Exposer;
+import com.akon.seckill.dto.SeckillExecution;
+import com.akon.seckill.entity.Seckill;
+import com.akon.seckill.exception.RepeatKillException;
+import com.akon.seckill.exception.SeckillCloseException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -11,17 +14,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.akon.seckill.dto.Exposer;
-import com.akon.seckill.dto.SeckillExecution;
-import com.akon.seckill.entity.Seckill;
-import com.akon.seckill.exception.RepeatKillException;
-import com.akon.seckill.exception.SeckillCloseException;
+import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//¸æËßjunit springµÄÅäÖÃÎÄ¼þ
+//ï¿½ï¿½ï¿½ï¿½junit springï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 @ContextConfiguration({"classpath:spring/spring-dao.xml",
                       "classpath:spring/spring-service.xml"})
-@Transactional  //¿ÉÓÃÓÚ²âÊÔÊ±Ö´ÐÐÍê²Ù×÷Ö®ºóËùÓÐÊÂÎñ×Ô¶¯»Ø¹ö
+@Transactional  //ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½Ê±Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½Ø¹ï¿½
 public class SeckillServiceTest {
 	
 	private final Logger logger= LoggerFactory.getLogger(this.getClass());
@@ -63,7 +62,7 @@ public class SeckillServiceTest {
 		}catch(SeckillCloseException e1) {
 			logger.error(e1.getMessage());
 		}	*/
-		//¸Ä½ø
+		//ï¿½Ä½ï¿½
 		long seckillId = 1001;
 		Exposer exposer = seckillService.exportSeckillUrl(seckillId);
 		if(exposer.isExposed()){
@@ -80,9 +79,22 @@ public class SeckillServiceTest {
 				logger.error(e1.getMessage());
 			}
 		}else {
-			//ÃëÉ±Î´¿ªÆô
+			//ï¿½ï¿½É±Î´ï¿½ï¿½ï¿½ï¿½
 			logger.warn("exposer={}",exposer);
 		}
+	}
+	
+	@Test
+	public void executeSeckillProcedure(){
+	    long seckillId = 1001L;
+	    long phone = 13680115101L;
+	    Exposer exposer = seckillService.exportSeckillUrl(seckillId);
+	    logger.info("exposer={}", exposer);
+	    if (exposer.isExposed()) {
+	        String md5 = exposer.getMd5();
+	        SeckillExecution execution = seckillService.executeSeckillProcedure(seckillId, phone, md5);
+	        logger.info("execution={}", execution);
+	    }
 	}
 
 }

@@ -6,6 +6,7 @@ var seckill = {
     //封装秒杀相关ajax的url
     URL: {
         now: function () {
+        	console.log("now方法***");
             return '/seckill/time/now';
         },
         exposer: function (seckillId) {
@@ -69,7 +70,7 @@ var seckill = {
                 if (result && result['success']) {
                     var nowTime = result['data'];
                     //时间判断 计时交互
-                    seckill.countDown(seckillId, nowTime, startTime, endTime);
+                    seckill.countdown(seckillId, nowTime, startTime, endTime);
                 } else {
                     console.log('result: ' + result);
                     alert('result: ' + result);
@@ -114,7 +115,7 @@ var seckill = {
                     var now = exposer['now'];
                     var start = exposer['start'];
                     var end = exposer['end'];
-                    seckill.countDown(seckillId, now, start, end);
+                    seckill.countdown(seckillId, now, start, end);
                 }
             } else {
                 console.log('result: ' + result);
@@ -122,8 +123,8 @@ var seckill = {
         });
 
     },
-
-    countDown: function (seckillId, nowTime, startTime, endTime) {
+    
+    countdown: function (seckillId, nowTime, startTime, endTime) {
         console.log(seckillId + '_' + nowTime + '_' + startTime + '_' + endTime);
         var seckillBox = $('#seckill-box');
         if (nowTime > endTime) {

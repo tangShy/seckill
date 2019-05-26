@@ -1,7 +1,5 @@
 package com.akon.seckill.service;
 
-import java.util.List;
-
 import com.akon.seckill.dto.Exposer;
 import com.akon.seckill.dto.SeckillExecution;
 import com.akon.seckill.entity.Seckill;
@@ -9,46 +7,58 @@ import com.akon.seckill.exception.RepeatKillException;
 import com.akon.seckill.exception.SeckillCloseException;
 import com.akon.seckill.exception.SeckillException;
 
+import java.util.List;
+
 /**
- * ÒµÎñ½Ó¿Ú£ºÕ¾ÔÚ¡°Ê¹ÓÃÕß¡±½Ç¶ÈÉè¼Æ½Ó¿Ú
- * Èý¸ö·½Ãæ£º·½·¨¶¨ÒåÁ£¶È£¬²ÎÊý£¬·µ»ØÀàÐÍ£¨returnÀàÐÍ/Òì³££©
- * 1.·½·¨¶¨ÒåÁ£¶È£¬·½·¨¶¨ÒåµÄÒª·Ç³£Çå³þ2.²ÎÊý£¬ÒªÔ½¼òÁ·Ô½ºÃ 3.·µ»ØÀàÐÍ(return
- * ÀàÐÍÒ»¶¨ÒªÓÑºÃ/»òÕßreturnÒì³££¬ÎÒÃÇÔÊÐíµÄÒì³£)
+ * Òµï¿½ï¿½Ó¿Ú£ï¿½Õ¾ï¿½Ú¡ï¿½Ê¹ï¿½ï¿½ï¿½ß¡ï¿½ï¿½Ç¶ï¿½ï¿½ï¿½Æ½Ó¿ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ£ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½returnï¿½ï¿½ï¿½ï¿½/ï¿½ì³£ï¿½ï¿½
+ * 1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ç³ï¿½ï¿½ï¿½ï¿½2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÔ½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ 3.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(return
+ * ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Òªï¿½Ñºï¿½/ï¿½ï¿½ï¿½ï¿½returnï¿½ì³£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì³£)
  * @author lenovo
  *
  */
 public interface SeckillService {
 	
 	/**
-	 * ²éÑ¯ËùÓÐÃëÉ±¼ÇÂ¼
+	 * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É±ï¿½ï¿½Â¼
 	 * @return
 	 */
 	List<Seckill> getSeckillList();
 	
 	/**
-	 * ²éÑ¯µ¥¸öÃëÉ±¼ÇÂ¼
+	 * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É±ï¿½ï¿½Â¼
 	 * @param seckillId
 	 * @return
 	 */
 	Seckill getById(long seckillId);
 	
 	/**
-	 * ÃëÉ±¿ªÆôÊ±Êä³öÃëÉ±½Ó¿ÚµØÖ·£¬
-	 * ·ñÔòÊä³öÏµÍ³Ê±¼äºÍÃëÉ±Ê±¼ä
+	 * ï¿½ï¿½É±ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½É±ï¿½Ó¿Úµï¿½Ö·ï¿½ï¿½
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³Ê±ï¿½ï¿½ï¿½ï¿½ï¿½É±Ê±ï¿½ï¿½
 	 * @param seckillId
-	 * @return ¸ù¾Ý¶ÔÓ¦µÄ×´Ì¬·µ»Ø¶ÔÓ¦µÄ×´Ì¬ÊµÌå
+	 * @return ï¿½ï¿½ï¿½Ý¶ï¿½Ó¦ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½Ø¶ï¿½Ó¦ï¿½ï¿½×´Ì¬Êµï¿½ï¿½
 	 */
 	Exposer exportSeckillUrl(long seckillId);
 	
 	/**
-	 * Ö´ÐÐÃëÉ±²Ù×÷£¬ÓÐ¿ÉÄÜÊ§°Ü£¬ÓÐ¿ÉÄÜ³É¹¦£¬ËùÒÔÒªÅ×³öÎÒÃÇÔÊÐíµÄÒì³£
+	 * Ö´ï¿½ï¿½ï¿½ï¿½É±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½Ð¿ï¿½ï¿½Ü³É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½×³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì³£
 	 * @param seckillId
 	 * @param userPhone
 	 * @param md5
-	 * @return ¸ù¾Ý²»Í¬µÄ½á¹û·µ»Ø²»Í¬µÄÊµÌåÐÅÏ¢
+	 * @return ï¿½ï¿½ï¿½Ý²ï¿½Í¬ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½Ø²ï¿½Í¬ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Ï¢
 	 */
 	SeckillExecution executeSeckill(long seckillId,long userPhone,String md5) throws SeckillException,
     RepeatKillException, SeckillCloseException;
+	
+	/**
+	 * ï¿½ï¿½ï¿½Ã´æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½É±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½×³ï¿½ï¿½ì³£
+	 * 
+	 * @param seckillId
+	 * @param userPhone
+	 * @param md5
+	 * @return
+	 */
+	SeckillExecution executeSeckillProcedure(long seckillId,long userPhone,String md5);
 }
 	
 	

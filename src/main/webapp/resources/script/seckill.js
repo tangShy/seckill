@@ -7,13 +7,13 @@ var seckill = {
     URL: {
         now: function () {
         	console.log("now方法***");
-            return '/seckill/seckill/time/now';
+            return '/seckill/time/now';
         },
         exposer: function (seckillId) {
-            return '/seckill/seckill/' + seckillId + '/exposer';
+            return '/seckill/' + seckillId + '/exposer';
         },
         execution: function (seckillId, md5) {
-            return '/seckill/seckill/' + seckillId + '/' + md5 + '/execution';
+            return '/seckill/' + seckillId + '/' + md5 + '/execution';
         }
     },
 
